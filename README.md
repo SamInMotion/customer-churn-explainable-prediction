@@ -1,55 +1,93 @@
-# Customer-Churn-analysis
-Exploratory analysis of energy customer churn factors
-# Energy Customer Churn Analysis
+# 💡 Customer Churn Explainable Prediction
 
-This repository contains an exploratory data analysis and predictive modeling of customer churn for an energy provider. The goal is to identify key factors influencing churn and develop a machine learning model to predict high-risk customers.
+**Exploratory and Explainable AI analysis of energy customer churn**
 
-## Overview
+This project contains an exploratory data analysis and predictive modeling pipeline for energy customer churn. In addition to building a high-performing model, it emphasizes **explainability** and **uncertainty quantification** to support real-world business decision-making.
 
-The analysis explores factors that contribute to customer churn, including:
-- Consumption patterns
+---
+
+## 🔍 Overview
+
+The analysis investigates drivers of customer churn in the energy sector, focusing on:
+
+- Consumption patterns (total and gas-specific)
 - Sales channels
 - Price sensitivity
-- Customer tenure
+- Contract duration and customer tenure
 
-## Key Findings
+---
 
-Overall churn rate: ~9.7%
+## 📊 Key Findings
 
-Primary churn drivers:
+- **Overall churn rate**: ~9.7%
+- **Top churn predictors**:  
+  - Net margin on power subscriptions  
+  - Gas and electricity consumption over 12 months  
+  - Contract duration
+- **Price sensitivity**: Less impactful than expected
+- **Sales channels**: Churn varies significantly across channels — potential for strategic optimization
 
-Net margin on power subscriptions is the strongest predictor of churn.
+---
 
-Consumption levels and contract duration significantly influence customer retention.
+## 🤖 Predictive Model
 
-Price sensitivity was found to be less impactful than initially expected.
+A **Random Forest Classifier** was used to predict churn, achieving:
 
-Churn varies across sales channels, highlighting potential strategic improvements.
+- **Accuracy**: 90.36%  
+- **Precision**: 81.82%  
+- **Recall**: 4.92%
 
+The model was interpreted using **SHAP values** to ensure transparency in feature contributions.
 
-## Predictive Model
-A machine learning model was developed to predict customer churn, achieving the following evaluation metrics:
+---
 
-Accuracy: 90.36%
+## 📈 Explainability & Uncertainty
 
-Precision: 81.82%
+### SHAP Interpretability
+SHAP (SHapley Additive exPlanations) was used to identify:
+- **Top global drivers** of churn
+- **Feature interactions** (e.g., gas usage × contract length)
+- **Individual predictions** explanation for case-level insight
 
-Recall: 4.92%
+<insert SHAP summary bar chart and interaction plot screenshots if uploading images>
 
-This model helps identify at-risk customers early, allowing for targeted retention strategies.
-## Tools Used
+### Confidence Intervals
+Uncertainty was visualized via bootstrapped metrics and prediction confidence levels to support:
+- **Better decision-making**
+- **Trust in the model's output**
+
+---
+
+## 💼 Business Impact
+
+This project enables:
+
+- ⚠️ **Early churn detection** for proactive intervention  
+- 🎯 **Targeted retention campaigns** for high-risk customers  
+- 💰 **Revenue preservation** by focusing efforts where they matter most  
+- 🔄 Continuous improvement with explainability built into every update
+
+---
+
+## 🛠 Tools Used
 
 - Python
 - Pandas
-- Matplotlib
-- Seaborn
+- Matplotlib, Seaborn
 - Scikit-learn
+- SHAP
 
-  ##Next Steps
-Implement an early warning system based on model predictions.
+---
 
-Develop tailored retention strategies for high-risk customers.
+## 🚀 Next Steps
 
-Continuously refine the model as new data becomes available.
+- Integrate early warning system into CRM  
+- Run A/B testing for tailored retention strategies  
+- Add economic cost-benefit layer to predictions  
+- Refine model with new features (e.g., seasonal usage)
 
+---
 
+## 📄 License
+
+This project is open source and available under the MIT License.
