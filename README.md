@@ -17,7 +17,7 @@ The analysis investigates drivers of customer churn in the energy sector, focusi
 
 ---
 
-## 📊 Key Findings
+##  Key Findings
 
 - **Overall churn rate**: ~9.7%
 - **Top churn predictors**:  
@@ -29,7 +29,7 @@ The analysis investigates drivers of customer churn in the energy sector, focusi
 
 ---
 
-## 🤖 Predictive Model
+##  Predictive Model
 
 A **Random Forest Classifier** was used to predict churn, achieving:
 
@@ -41,7 +41,7 @@ The model was interpreted using **SHAP values** to ensure transparency in featur
 
 ---
 
-## 📈 Explainability & Uncertainty
+##  Explainability & Uncertainty
 
 ### SHAP Interpretability
 SHAP (SHapley Additive exPlanations) was used to identify:
@@ -62,10 +62,10 @@ Uncertainty was visualized via bootstrapped metrics and prediction confidence le
 
 This project enables:
 
-- ⚠️ **Early churn detection** for proactive intervention  
-- 🎯 **Targeted retention campaigns** for high-risk customers  
-- 💰 **Revenue preservation** by focusing efforts where they matter most  
-- 🔄 Continuous improvement with explainability built into every update
+-  **Early churn detection** for proactive intervention  
+-  **Targeted retention campaigns** for high-risk customers  
+- **Revenue preservation** by focusing efforts where they matter most  
+-  Continuous improvement with explainability built into every update
 
 ---
 
@@ -79,7 +79,7 @@ This project enables:
 
 ---
 
-## 🚀 Next Steps
+## Possible Next Steps
 
 - Integrate early warning system into CRM  
 - Run A/B testing for tailored retention strategies  
