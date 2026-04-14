@@ -1,93 +1,26 @@
-# 💡 Customer Churn Explainable Prediction
+# Customer Churn Explainable Prediction
 
-**Exploratory and Explainable AI analysis of energy customer churn**
+Exploratory analysis and predictive modeling for energy customer churn, built as part of the BCG Data Science simulation on Forage.
 
-This project contains an exploratory data analysis and predictive modeling pipeline for energy customer churn. In addition to building a high-performing model, it emphasizes **explainability** and **uncertainty quantification** to support real-world business decision-making.
+The focus was on understanding what drives churn and making the model's reasoning transparent using SHAP, rather than just optimizing accuracy.
 
----
+## What the data showed
 
-## 🔍 Overview
+The dataset covers ~14,000 energy customers. Overall churn rate is about 9.7%. The strongest predictors turned out to be net margin on power subscriptions, gas and electricity consumption over 12 months, and contract duration. Price sensitivity was less impactful than expected, which was the most interesting finding — the simulation brief assumed price was the main driver.
 
-The analysis investigates drivers of customer churn in the energy sector, focusing on:
+## Model
 
-- Consumption patterns (total and gas-specific)
-- Sales channels
-- Price sensitivity
-- Contract duration and customer tenure
+Random Forest classifier. Accuracy: 90.36%, Precision: 81.82%, Recall: 4.92%. The low recall is worth noting — the model is conservative about predicting churn, which means it misses most actual churners. In a production setting you'd want to tune the threshold or try cost-sensitive learning.
 
----
+## Explainability
 
-##  Key Findings
+SHAP values were used for both global feature importance and individual prediction explanations. Bootstrapped confidence intervals give a sense of how stable the predictions are. The goal was to make the model's output something a business team could actually act on, not just a score.
 
-- **Overall churn rate**: ~9.7%
-- **Top churn predictors**:  
-  - Net margin on power subscriptions  
-  - Gas and electricity consumption over 12 months  
-  - Contract duration
-- **Price sensitivity**: Less impactful than expected
-- **Sales channels**: Churn varies significantly across channels — potential for strategic optimization
+## Tools
 
----
+Python, pandas, matplotlib, seaborn, scikit-learn, SHAP
 
-##  Predictive Model
+## Files
 
-A **Random Forest Classifier** was used to predict churn, achieving:
-
-- **Accuracy**: 90.36%  
-- **Precision**: 81.82%  
-- **Recall**: 4.92%
-
-The model was interpreted using **SHAP values** to ensure transparency in feature contributions.
-
----
-
-##  Explainability & Uncertainty
-
-### SHAP Interpretability
-SHAP (SHapley Additive exPlanations) was used to identify:
-- **Top global drivers** of churn
-- **Feature interactions** (e.g., gas usage × contract length)
-- **Individual predictions** explanation for case-level insight
-
-<insert SHAP summary bar chart and interaction plot screenshots if uploading images>
-
-### Confidence Intervals
-Uncertainty was visualized via bootstrapped metrics and prediction confidence levels to support:
-- **Better decision-making**
-- **Trust in the model's output**
-
----
-
-## 💼 Business Impact
-
-This project enables:
-
--  **Early churn detection** for proactive intervention  
--  **Targeted retention campaigns** for high-risk customers  
-- **Revenue preservation** by focusing efforts where they matter most  
--  Continuous improvement with explainability built into every update
-
----
-
-## 🛠 Tools Used
-
-- Python
-- Pandas
-- Matplotlib, Seaborn
-- Scikit-learn
-- SHAP
-
----
-
-## Possible Next Steps
-
-- Integrate early warning system into CRM  
-- Run A/B testing for tailored retention strategies  
-- Add economic cost-benefit layer to predictions  
-- Refine model with new features (e.g., seasonal usage)
-
----
-
-## 📄 License
-
-This project is open source and available under the MIT License.
+- `BCG_Task_2__EDA.ipynb` — exploratory data analysis
+- `Churn_Predictive_modeling_.ipynb` — modeling pipeline with SHAP interpretation
